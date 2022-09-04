@@ -1,0 +1,803 @@
+/*------------------
+*******Fonts*******
+------------------*/
+
+@font-face {
+	font-family: "FFW";
+	src: url("fonts/FUTRFW.TTF");
+}
+
+@font-face {
+	font-family: "Charlotte";
+	src: url("fonts/Charlotte.otf");
+}
+
+@font-face {
+	font-family: "AG-Regular";
+	src: url("fonts/AppleGaramond.ttf");
+}
+
+@font-face {
+	font-family: "AG-Light";
+	src: url("fonts/AppleGaramond-Light.ttf");
+}
+
+/*------------------
+****Universal CSS***
+------------------*/
+
+body {
+	margin: 0px;
+}
+
+/*------------------
+*****Header CSS*****
+------------------*/
+
+header {
+	height: 15vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+}
+
+.header-logo {
+	height: 60%;
+	margin-left: 20px;	
+}
+
+.header-nav {
+	display: none;
+}
+
+/*------------------
+****Hamburger CSS***
+------------------*/
+
+.hamburger-section {
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	z-index: 20;
+}
+
+.hamburger-section.is-active {
+	transform: translateX(0%);
+}
+
+.hamburger-close.is-active {
+	transform: translateX(100%);
+}
+
+.hamburger-icon {
+	width: 35px;
+	padding-right: 20px;
+	cursor: pointer;
+	z-index: 30;
+}
+
+.hamburger-icon .bar {
+	background: #ffffff;
+	height: 3px;
+	margin: 5px 0px;
+	transition: all 0.5s;
+	margin-left: auto;
+}
+
+.hamburger-icon .bar:nth-child(1) {
+	width: 33%;
+}
+
+.hamburger-icon .bar:nth-child(2) {
+	width: 66%;
+}
+
+.hamburger-icon.is-active .bar:nth-child(1) {
+	width: 100%;
+	transform: translateY(9px) rotate(45deg);
+	height: 5px;
+}
+
+.hamburger-icon.is-active .bar:nth-child(2) {
+	transform: scale(0);
+}
+
+.hamburger-icon.is-active .bar:nth-child(3) {
+	transform: translateY(-9px) rotate(-45deg);
+	height: 5px;
+}
+
+.hamburger-overlay {
+	position: fixed;
+	background-color: rgba(241, 137, 109, 0.9);
+	top: 0;
+	bottom: 0;
+	left: 100%;
+	height: 100vh;
+	width: 70%;
+	margin-left: auto;
+	z-index: 10;
+	transition: 0.5s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hamburger-overlay.is-open {
+	left: 30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hamburger-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+	max-height: 200px; 
+}
+
+.hamburger-home,
+.hamburger-services,
+.hamburger-contact {
+	font-family: "FFW";
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #ffffff;
+	position: relative;
+	z-index: 20;
+	padding: 7px 0px;
+	font-size: 16px;
+}
+
+/*------------------
+*****Index CSS*****
+------------------*/
+
+.background-image {
+	background-image: url("images/index-background-small.jpg");
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+	background-position: center center;
+	background-size: cover;
+	object-fit: cover;
+	filter: none;
+	animation: no-blur 0.5s ease-out;
+}
+
+.background-image.is-open {
+	filter: blur(3px);
+	animation: blur 0.5s ease-in forwards;
+}
+
+/*------------------
+****Services CSS****
+------------------*/
+
+.services-image {
+	background-image: url("images/services-background-small.jpg");
+	position: relative;
+	width: 100%;
+	height: 70vh;
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+	background-position: center center;
+	background-size: cover;
+	object-fit: cover;
+	filter: none;
+	animation: no-blur 0.5s ease-out;
+}
+
+.services-image.is-open {
+	filter: blur(3px);
+	animation: blur 0.5s ease-in forwards;
+}
+
+.services-intro-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	filter: none;
+	animation: no-blur 0.5s ease-out;
+}
+
+.services-intro-container.is-open {
+	filter: blur(3px);
+	animation: blur 0.5s ease-in forwards;
+}
+
+.services-header {
+	font-family: "Charlotte", serif;
+	font-size: 100px;
+	font-weight: normal;
+	margin: 0px;
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	color: #ffffff;
+}
+
+.services-intro {
+	font-family: "AG-Regular", sans-serif;
+	text-align: center;
+	margin: 60px;
+	font-size: 18px;
+}
+
+.left-pricing-container,
+.right-pricing-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	filter: none;
+	animation: no-blur 0.5s ease-out;
+}
+
+.left-pricing-container.is-open {
+	filter: blur(3px);
+	animation: blur 0.5s ease-in forwards;
+}
+
+.bridal-makeup,
+.other-makeup {
+	width: 100%;
+}
+
+.bridal-services-text-container,
+.other-services-text-container {
+	margin: 40px 0px;
+	width: 80%;
+}
+
+.bridal-services-text-container h1,
+.other-services-text-container h1 {
+	font-family: "Charlotte", serif;
+	font-weight: normal;
+	margin: 0px;
+	font-size: 50px;
+}
+
+.bridal-services-description,
+.other-services-description {
+	font-family: "AG-Regular", serif;
+	margin: 10px 0px 30px 0px;
+	font-size: 18px;
+}
+
+.bridal-pricing-container,
+.other-pricing-container {
+	width: 80%;
+}
+
+.bridal-prices,
+.other-prices {
+	font-family: "AG-Regular", serif;
+	font-size: 18px;
+	font-weight: 600;
+	display: flex;
+	justify-content: space-between;
+	margin: 0px;
+}
+
+.pricing-images,
+.pricing-images-left {
+	display: flex;
+	justify-content: center;
+}
+
+.bridal-minimum {
+	margin-top: 30px;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+.pricing-images-right {
+	display: none;
+}
+
+/*------------------
+****Contact CSS****
+------------------*/
+
+.contact-image {
+	background-image: url("images/contact-background-small.jpg");
+	position: relative;
+	width: 100%;
+	height: 70vh;
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+	background-position: center center;
+	background-size: cover;
+	object-fit: cover;
+	filter: none;
+	animation: no-blur 0.5s ease-out;
+}
+
+.contact-image.is-open {
+	filter: blur(3px);
+	animation: blur 0.5s ease-in forwards;
+}
+
+.contact-header {
+	font-family: "Charlotte", serif;
+	font-size: 100px;
+	font-weight: normal;
+	margin: 0px;
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	color: #ffffff;
+}
+
+.contact-intro {
+	font-family: "AG-Regular", sans-serif;
+	text-align: center;
+	margin: 60px;
+	font-size: 18px;
+}
+
+.contact-intro-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	filter: none;
+	animation: no-blur 0.5s ease-out;
+}
+
+.contact-intro-container.is-open {
+	filter: blur(3px);
+	animation: blur 0.5s ease-in forwards;
+}
+
+.contact-details-container {
+	display: flex;
+	flex-direction: column;
+	height: 100px;
+	justify-content: center;
+	margin-bottom: 40px;
+	max-width: 768px;
+	width: 100%;
+}
+
+.contact-details-container img {
+	height: 40px;
+	width: 40px;
+}
+
+.map-container {
+	height: 600px;
+	width: 100%;
+	z-index: -2;
+	display: flex;
+	justify-content: center;
+}
+
+iframe {
+	width: 100%;
+	max-width: 2000px;
+}
+
+.email-container,
+.phone-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.email,
+.phone-number {
+	margin: 0px 0px 0px 20px;
+	font-size: 18px;
+}
+
+.location-text-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 40px;
+}
+
+.location-text {
+	margin: 0px;
+	text-align: center;
+	font-family: "AG-Regular", serif;
+	font-size: 18px;
+}
+
+.location-text:nth-child(1) {
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+/*------------------
+*****Footer CSS*****
+------------------*/
+
+footer {
+	width: 100%;
+	height: 40vh;
+	background-color: #f1896d;
+	display: flex;
+	justify-content: center;
+}
+
+.footer-container {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.footer-nav {
+	width: 100%;	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer-nav a {
+	color: #ffffff;
+	font-family: "FFW", serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 5px 0px;
+}
+
+.social-icons-container {
+	width: 70%;
+	height: 40px;
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+.social-icons-container img {
+	height: 100%;
+	width: auto;
+	margin: 0px 3px;
+}
+
+.social-icons-container:hover {
+	cursor: pointer;
+}
+
+/*------------------
+***Media Queries***
+------------------*/
+
+@media (min-width: 300px) {
+	
+}
+
+@media (min-width: 768px) {
+	.hamburger-icon {
+		padding-right: 40px;
+	}
+	
+	.hamburger-overlay {
+		width: 50%;
+	}
+	
+	.hamburger-overlay.is-open {
+		left: 50%;
+	}
+	
+	.header-logo {
+		margin-left: 40px;
+	}
+	
+	.services-header,
+	.contact-header {
+		font-size: 140px;
+		bottom: -20px;
+	}
+	
+	.services-intro,
+	.contact-intro {
+		text-align: center;
+		margin: 80px 0px;
+		font-size: 20px;
+		width: 50%;
+	}
+	
+	.bridal-makeup,
+	.other-makeup {
+		width: 70%;
+	}
+	
+	.bridal-services-text-container h1,
+	.other-services-text-container h1 {
+		font-size: 60px;
+	}
+	
+	.bridal-services-description,
+	.other-services-description {
+		width: 100%;
+		font-size: 20px;
+	}
+
+	.bridal-pricing-container,
+	.other-pricing-container {
+		width: 50%;
+	}
+	
+	.bridal-services-text-container,
+	.other-services-text-container {
+		width: 70%;
+		margin-bottom: 50px;
+	}
+	
+	.bridal-prices,
+	.other-prices {
+		font-size: 20px;
+	}
+	
+	.bridal-minimum {
+		font-size: 18px;
+	}
+	
+	footer {
+		height: 30vh;
+	}
+	
+	.contact-details-container {
+		flex-direction: row;
+		height: 100px;
+		justify-content: center;
+	}
+	
+	.email-container {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
+	
+	.phone-container {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}	
+	
+	.email,
+	.phone-number {
+		margin: 0px 0px 0px 30px;
+		display: flex;
+		justify-content: flex-start;
+		font-size: 20px;
+	}
+	
+	.social-icons-container img {
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	.location-text {
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.background-image {
+		background-image: url("images/index-background.jpg");
+	}
+	
+	.services-image {
+		background-image: url("images/services-background.jpg");
+		height: 100vh;
+	}
+	
+	.contact-image {
+		background-image: url("images/contact-background.jpg");
+		height: 100vh;
+	}
+
+	.hamburger-section {
+		display: none;
+	}
+
+	.header-nav {
+		margin-right: 50px;
+		max-width: 450px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.header-nav a {
+		text-decoration: none;
+		text-transform: uppercase;
+		font-family: "FFW", sans-serif;
+		font-size: 16px;
+		color: #ffffff;
+		transition: 0.5s ease;
+	}
+	
+	.header-nav a:hover {
+		color: #f1896d;
+	}
+	
+	.left-pricing-container {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+	}
+	
+	.right-pricing-container {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: flex-end;
+	}
+	
+	.bridal-makeup, 
+	.other-makeup {
+		position: absolute;
+		min-width: 100%;
+		min-height: 100%;
+		bottom: 0;
+	}
+	
+	.pricing-images {
+		width: 50%;
+		padding-bottom: 50%;
+		overflow: hidden;
+		position: relative;
+		justify-content: flex-end;
+	}
+	
+	.pricing-images-right {
+		display: block;
+		width: 50%;
+		padding-bottom: 50%;
+		overflow: hidden;
+		position: relative;
+		justify-content: flex-end;
+		margin: 0px;
+	}
+	
+	.pricing-images-left {
+		display: none;
+	}
+	
+	.bridal-services-text-container {
+		width: 50%;
+		padding: 0px 50px;
+		box-sizing: border-box;
+	}
+	
+	.other-services-text-container {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		padding: 0px 50px;
+		box-sizing: border-box;
+	}
+	
+	.other-services-description {
+		text-align: right;
+	}
+	
+	.footer-nav {
+		width: 50%;	
+	}
+}
+
+@media (min-width: 1379px) {
+	.header-nav {
+		margin-right: 90px;
+	}
+	
+	.bridal-makeup,
+	.other-makeup {
+		height: auto;
+	}
+	
+	.left-pricing-container,
+	.right-pricing-container {
+		max-width: 2000px;
+		margin: 0 auto;
+	}
+	
+	.bridal-services-description,
+	.other-services-description {
+		width: 80%;
+		font-size: 24px;
+	}
+	
+	.bridal-prices,
+	.other-prices {
+		font-size: 24px;
+	}
+	
+	.bridal-minimum {
+		font-size: 20px;
+	}
+	
+	.bridal-services-text-container h1,
+	.other-services-text-container h1 {
+		font-size: 90px;
+	}
+	
+	.services-intro,
+	.contact-intro {
+		font-size: 24px;
+	}
+}
+
+@media (min-width: 1850px) {	
+	.bridal-services-text-container {
+		padding: 0px 80px;
+	}
+	
+	.other-services-text-container {
+		padding: 0px 80px;
+	}
+}
+	
+
+/*------------------
+*****Animations*****
+------------------*/
+
+@keyframes blur {
+	0% {
+  		filter: none;
+	}
+	100% {
+		filter: blur(3px);
+	}
+}
+
+@keyframes no-blur {
+	0% {
+  		filter: blur(3px);
+	}
+	100% {
+		filter: none;
+	}
+}
+
+@keyframes slide-in {
+	0% {
+  		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@keyframes slide-out {
+	0% {
+  		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
